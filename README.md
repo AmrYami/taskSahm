@@ -1,3 +1,15 @@
+#task
+• We need to create a CRUD To-do list with user tasks and status of every task
+• We need to preview the to-do list with WEBSOCKET (Real Time Preview)
+➢ Authentication with dashboard containing:
+id
+title
+desc
+status (CANCELLED - INPROGRESS - COMPLETED - HOLD)
+created-at
+updated-at
+• changing status, delete or update will affect in To-do list preview
+
 # BaseModule
 first just you need to do composer update then do php artisan migrate --seed
 create directory public/upload/media
