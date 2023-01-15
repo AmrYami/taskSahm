@@ -1,5 +1,5 @@
 <!--begin: Datatable-->
-<table class="table table-separate table-head-custom" id="kt_datatable">
+<table class="table table-separate table-head-custom taskTable" id="kt_datatable">
     <thead>
     <tr>
         <th>Name</th>
@@ -12,7 +12,7 @@
     @foreach($tasks as $task)
         <tr>
             <td>{{ $task->title }}</td>
-            <td>{{ $states[$task->status] }}</td>
+            <td id="task_{{$task->id}}_id">{{ $states[$task->status] }}</td>
 
             <td>
                     <div class='btn-group'>

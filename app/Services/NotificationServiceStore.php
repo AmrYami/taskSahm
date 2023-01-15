@@ -93,9 +93,11 @@ class NotificationServiceStore extends Service implements ServiceStore
         $reqNotification = new Request();
 //            $myClass = ModulesFactory::build('\App\Http\Controllers\PushController');
         $reqNotification->merge([
+            'task_id' => $data['task_id'] ?? 'newItemNotificationTitle',
             'title' => $data['title'] ?? 'newItemNotificationTitle',
             'body' => $data['body'] ?? 'newItemNotificationBody',
             'user_id' => $userId,
+            'action'  => $data['action'] ?? '',
             'type' => $data['type'] ?? 'new item',
             'icon' => $data['icon'] ?? 'flaticon2-line-chart kt-font-success',
             'route' => $url,

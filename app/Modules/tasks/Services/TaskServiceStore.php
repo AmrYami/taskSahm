@@ -60,6 +60,8 @@ class TaskServiceStore extends Service implements ServiceStore
         $dataNotification = [
             'title' => Auth::user()->name,
             'body' => 'new task',
+            'task_id' => $task->id,
+            'action' => 'create',
             'type' => 'task',
             'icon' => 'flaticon2-line-chart kt-font-success',
         ];
@@ -93,8 +95,10 @@ class TaskServiceStore extends Service implements ServiceStore
             $dataNotification = [
                 'title' => Auth::user()->name,
                 'body' => 'task state: '. $states[$taskObject->status],
-                'type' => 'task',
+                'type' => $states[$taskObject->status],
                 'icon' => 'flaticon2-line-chart kt-font-success',
+                'task_id' => $taskObject->id,
+                'action' => 'edit',
             ];
             $this->notificationService->notificationAction($taskObject->admin_id, $request, "asdasd", $this->model, $dataNotification);
 
